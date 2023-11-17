@@ -14,10 +14,10 @@ class HeroesController extends Controller
 
      public function login()
      {
-
+            
 
      }
-     
+
     public function index()
     {
         $heroe = Heroes::all();

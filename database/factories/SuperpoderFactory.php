@@ -16,8 +16,19 @@ class SuperpoderFactory extends Factory
      */
     public function definition(): array
     {
+        $poder = $this->faker->randomElement([
+        'Volar',
+        'Invisibilidad',
+        'Telepatía',
+        'Telequinesis',
+        'Teletransportación',
+        'Cambiar de forma',
+        'Invulnerabilidad',
+        'Súper velocidad',
+        'Súper fuerza',
+        'Manipulación del fuego']);
         return [
-            //
+            'superpoder' => $poder
         ];
     }
 }

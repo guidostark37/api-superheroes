@@ -13,7 +13,8 @@ class SuperpoderController extends Controller
      */
     public function index()
     {
-        //
+        $superpoder = Superpoder::all();
+        return response()->json([$superpoder]);
     }
 
     /**
@@ -29,7 +30,8 @@ class SuperpoderController extends Controller
      */
     public function store(StoreSuperpoderRequest $request)
     {
-        //
+        $superpoder = Superpoder::create($request->all());
+        return response()->json([$superpoder]);
     }
 
     /**
@@ -53,7 +55,8 @@ class SuperpoderController extends Controller
      */
     public function update(UpdateSuperpoderRequest $request, Superpoder $superpoder)
     {
-        //
+        $superpoder->update($request->all());
+        return response()->json([$superpoder]);
     }
 
     /**
@@ -61,6 +64,7 @@ class SuperpoderController extends Controller
      */
     public function destroy(Superpoder $superpoder)
     {
-        //
+        $superpoder->delete();
+        return "eliminado";
     }
 }

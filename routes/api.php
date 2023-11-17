@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\HeroesController;
+use App\Http\Controllers\PlanetaController;
+use App\Http\Controllers\SuperpoderController;
+use App\Models\Planeta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::resource('heroes',HeroesController::class);
+
+Route::resource('planetas', PlanetaController::class);
+
+Route::resource('superpoder',SuperpoderController::class);
+

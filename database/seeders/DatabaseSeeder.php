@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
         // Planeta::factory(5)->create();
         $this->call([
                     PlanetaSeeder::class,
-                    EquipoSeeder::class
+                    EquipoSeeder::class,
+                    AsignarMisionSeeder::class,
+                    SuperpoderSeeder::class
         ]);
     }
 }

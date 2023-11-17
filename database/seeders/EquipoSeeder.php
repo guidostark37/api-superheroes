@@ -14,5 +14,6 @@ class EquipoSeeder extends Seeder
     public function run(): void
     {
         Equipo::factory(8)->create();
+        
     }
 }
