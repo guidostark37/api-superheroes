@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Planeta;
 use App\Http\Requests\StorePlanetaRequest;
 use App\Http\Requests\UpdatePlanetaRequest;
+use Illuminate\Database\Eloquent\Casts\Json;
 
 class PlanetaController extends Controller
 {
@@ -13,7 +14,8 @@ class PlanetaController extends Controller
      */
     public function index()
     {
-        //
+        $planeta = Planeta::all();
+        return response()->json([$planeta]);
     }
 
     /**
@@ -29,7 +31,8 @@ class PlanetaController extends Controller
      */
     public function store(StorePlanetaRequest $request)
     {
-
+        $planeta = Planeta::create($request->all());
+        return response()->json([$planeta]);
     }
 
     /**
@@ -45,7 +48,7 @@ class PlanetaController extends Controller
      */
     public function edit(Planeta $planeta)
     {
-
+            
     }
 
     /**
@@ -53,7 +56,8 @@ class PlanetaController extends Controller
      */
     public function update(UpdatePlanetaRequest $request, Planeta $planeta)
     {
-
+        $planeta->update($request->all());
+        return response()->json([$planeta]);
     }
 
     /**
@@ -61,6 +65,7 @@ class PlanetaController extends Controller
      */
     public function destroy(Planeta $planeta)
     {
-        
+        $planeta->delete();
+        return "Eliminado";
     }
 }

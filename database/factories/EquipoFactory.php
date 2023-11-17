@@ -16,8 +16,10 @@ class EquipoFactory extends Factory
      */
     public function definition(): array
     {
+        $equipo = $this->faker->randomElement(['avengers','justices league','Fantastic Four','Marvel Family','Legion of Superheroes','X-Men','Teen Titans','
+        guardians of the Galaxy']);
         return [
-            //
+            'nombre_equipo' => $equipo
         ];
     }
 }

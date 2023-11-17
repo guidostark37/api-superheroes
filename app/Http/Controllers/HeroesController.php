@@ -11,9 +11,17 @@ class HeroesController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function login()
+     {
+
+
+     }
+     
     public function index()
     {
-        //
+        $heroe = Heroes::all();
+        return response()->json([$heroe]);
     }
 
     /**
@@ -29,7 +37,8 @@ class HeroesController extends Controller
      */
     public function store(StoreHeroesRequest $request)
     {
-        //
+        $heroes = Heroes::create($request->all());
+        return response()->json([$heroes]);
     }
 
     /**
@@ -45,7 +54,7 @@ class HeroesController extends Controller
      */
     public function edit(Heroes $heroes)
     {
-        //
+
     }
 
     /**
@@ -53,7 +62,8 @@ class HeroesController extends Controller
      */
     public function update(UpdateHeroesRequest $request, Heroes $heroes)
     {
-        //
+        $heroes->update($request->all());
+        return response()->json([$heroes]);
     }
 
     /**
@@ -61,6 +71,7 @@ class HeroesController extends Controller
      */
     public function destroy(Heroes $heroes)
     {
-        //
+        $heroes->delete();
+        return "Eliminado";
     }
 }

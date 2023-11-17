@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
-            $table->String('nombre_heroe');
+            $table->String('nombre_heroe')->unique();
+            $table->string('password');
             $table->String('año_inicio');
             $table->integer('nivel');
             $table->foreignIdFor(Planeta::class)->constrained();
