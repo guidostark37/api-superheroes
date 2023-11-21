@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Planeta;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class HeroesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre_heroe' => $this->faker->name(),
+            'password' => $this->faker->password(),
+            'año_inicio' => $this->faker->year(),
+            'nivel' => $this->faker->randomNumber(),
+           
         ];
     }
 }

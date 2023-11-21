@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class TipoMision extends Model
 {
     use HasFactory;
+    protected $filleable = 'tipo_mision';
 }

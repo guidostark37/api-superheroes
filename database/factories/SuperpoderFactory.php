@@ -27,6 +27,7 @@ class SuperpoderFactory extends Factory
         'Súper velocidad',
         'Súper fuerza',
         'Manipulación del fuego']);
+        
         return [
             'superpoder' => $poder
         ];

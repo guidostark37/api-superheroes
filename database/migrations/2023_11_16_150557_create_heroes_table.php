@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->String('año_inicio');
             $table->integer('nivel');
-            $table->foreignIdFor(Planeta::class)->constrained();
-            $table->foreignIdFor(Equipo::class)->constrained();
+            $table->foreignIdFor(Planeta::class)->constrained()->nullable();
+            $table->foreignIdFor(Equipo::class)->constrained()->nullable();
             $table->timestamps();
         });
     }

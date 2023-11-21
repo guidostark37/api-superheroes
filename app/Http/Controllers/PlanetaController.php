@@ -40,7 +40,9 @@ class PlanetaController extends Controller
      */
     public function show(Planeta $planeta)
     {
+            $planeta = Planeta::findOrFAil($planeta);
 
+            return response()->json([$planeta]);
     }
 
     /**
@@ -48,7 +50,7 @@ class PlanetaController extends Controller
      */
     public function edit(Planeta $planeta)
     {
-            
+
     }
 
     /**
@@ -65,7 +67,8 @@ class PlanetaController extends Controller
      */
     public function destroy(Planeta $planeta)
     {
+        $planeta = Planeta::findOrFAil($planeta);
         $planeta->delete();
-        return "Eliminado";
+        return response()->json(null);
     }
 }

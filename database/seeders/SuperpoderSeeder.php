@@ -13,6 +13,8 @@ class SuperpoderSeeder extends Seeder
      */
     public function run(): void
     {
-        Superpoder::factory(10)->create();
+        Superpoder::factory(15)->create();
+
+        
     }
 }

@@ -11,7 +11,7 @@ class UpdatePlanetaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,17 @@ class UpdatePlanetaRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+
+            return [
+                'nombre_planeta' =>'required'
+            ];
+
+    }
+
+    public function messages(): array
+    {
+        return[
+            'nombre_planeta.required' => 'El campo es obligatorio',
         ];
     }
 }

@@ -13,6 +13,6 @@ class PlanetaSeeder extends Seeder
      */
     public function run(): void
     {
-        Planeta::factory(5)->create();
+        Planeta::factory(10)->create();
     }
 }
