@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Heroes;
+use App\Models\PoderHeroe;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,9 +14,9 @@ class PoderHeroeSeeder extends Seeder
      */
     public function run(): void
     {
-        $heroes = Heroes::class;
+
+        PoderHeroe::factory(5)->create();
 
 
-        
     }
 }

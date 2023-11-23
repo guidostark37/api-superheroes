@@ -17,7 +17,11 @@ class MisionFactory extends Factory
     public function definition(): array
     {
         return [
-            
+            'mision' => $this->faker->name(),
+            'descripcion' => $this->faker->paragraph(),
+            'tipo_mision_id' => function (){
+                return \App\Models\TipoMision::factory()->create()->id;
+            }
         ];
     }
 }

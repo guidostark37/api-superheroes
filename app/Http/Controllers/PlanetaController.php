@@ -15,7 +15,7 @@ class PlanetaController extends Controller
     public function index()
     {
         $planeta = Planeta::all();
-        return response()->json([$planeta]);
+        return response()->json($planeta);
     }
 
     /**
@@ -32,7 +32,7 @@ class PlanetaController extends Controller
     public function store(StorePlanetaRequest $request)
     {
         $planeta = Planeta::create($request->all());
-        return response()->json([$planeta]);
+        return response()->json($planeta);
     }
 
     /**
@@ -40,9 +40,9 @@ class PlanetaController extends Controller
      */
     public function show(Planeta $planeta)
     {
-            $planeta = Planeta::findOrFAil($planeta);
+            $planeta = Planeta::findOrFail($planeta);
 
-            return response()->json([$planeta]);
+            return response()->json($planeta);
     }
 
     /**
@@ -59,7 +59,7 @@ class PlanetaController extends Controller
     public function update(UpdatePlanetaRequest $request, Planeta $planeta)
     {
         $planeta->update($request->all());
-        return response()->json([$planeta]);
+        return response()->json($planeta);
     }
 
     /**
@@ -67,7 +67,7 @@ class PlanetaController extends Controller
      */
     public function destroy(Planeta $planeta)
     {
-        $planeta = Planeta::findOrFAil($planeta);
+        $planeta = Planeta::findOrFail($planeta);
         $planeta->delete();
         return response()->json(null);
     }

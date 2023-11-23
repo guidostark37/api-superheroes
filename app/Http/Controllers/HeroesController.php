@@ -14,14 +14,14 @@ class HeroesController extends Controller
 
      public function login()
      {
-            
+
 
      }
 
     public function index()
     {
-        $heroe = Heroes::all();
-        return response()->json([$heroe]);
+        $heroes = Heroes::all();
+        return response()->json($heroes);
     }
 
     /**
@@ -29,7 +29,7 @@ class HeroesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -38,7 +38,7 @@ class HeroesController extends Controller
     public function store(StoreHeroesRequest $request)
     {
         $heroes = Heroes::create($request->all());
-        return response()->json([$heroes]);
+        return response()->json($heroes);
     }
 
     /**
@@ -46,7 +46,8 @@ class HeroesController extends Controller
      */
     public function show(Heroes $heroes)
     {
-        //
+        $heroes = Heroes::findOrFail($heroes);
+        return response()->json($heroes);
     }
 
     /**
@@ -63,7 +64,7 @@ class HeroesController extends Controller
     public function update(UpdateHeroesRequest $request, Heroes $heroes)
     {
         $heroes->update($request->all());
-        return response()->json([$heroes]);
+        return response()->json($heroes);
     }
 
     /**
@@ -71,7 +72,8 @@ class HeroesController extends Controller
      */
     public function destroy(Heroes $heroes)
     {
+        $heroes = Heroes::findOrFail($heroes);
         $heroes->delete();
-        return "Eliminado";
+        return response()->json($heroes);
     }
 }

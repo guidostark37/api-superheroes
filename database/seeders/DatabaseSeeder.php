@@ -21,7 +21,10 @@ class DatabaseSeeder extends Seeder
                     EquipoSeeder::class,
                     AsignarMisionSeeder::class,
                     SuperpoderSeeder::class,
-                    HeroesSeeder::class
+                    HeroesSeeder::class,
+                    PoderHeroeSeeder::class,
+                    MisionSeeder::class,
+                    MisionEquipoSeeder::class
         ]);
     }
 }

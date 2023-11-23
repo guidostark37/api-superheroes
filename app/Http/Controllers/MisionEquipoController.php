@@ -13,7 +13,8 @@ class MisionEquipoController extends Controller
      */
     public function index()
     {
-        //
+        $misionequipo = MisionEquipo::all();
+        return response()->json($misionequipo);
     }
 
     /**
@@ -29,7 +30,8 @@ class MisionEquipoController extends Controller
      */
     public function store(StoreMisionEquipoRequest $request)
     {
-        //
+        $misionequipo = MisionEquipo::create($request->all());
+        return response()->json($misionequipo);
     }
 
     /**
@@ -37,7 +39,8 @@ class MisionEquipoController extends Controller
      */
     public function show(MisionEquipo $misionEquipo)
     {
-        //
+        $misionEquipo = MisionEquipo::findOrFail($misionEquipo);
+        return response()->json($misionEquipo);
     }
 
     /**
@@ -53,7 +56,8 @@ class MisionEquipoController extends Controller
      */
     public function update(UpdateMisionEquipoRequest $request, MisionEquipo $misionEquipo)
     {
-        //
+        $misionEquipo->update($request->all());
+        return response()->json($misionEquipo);
     }
 
     /**
@@ -61,6 +65,8 @@ class MisionEquipoController extends Controller
      */
     public function destroy(MisionEquipo $misionEquipo)
     {
-        //
+        $misionEquipo = MisionEquipo::findOrFail($misionEquipo);
+        $misionEquipo->delete();
+        return response()->json(null);
     }
 }

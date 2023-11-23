@@ -19,7 +19,13 @@ class PoderHeroeFactory extends Factory
     {
         return [
 
-            
+            'heroes_id'=> function(){
+                return \App\Models\Heroes::factory()->create()->id;
+            },
+            'superpoder_id' => function(){
+
+                return \App\Models\Superpoder::factory()->create()->id;
+            }
 
 
         ];

@@ -11,7 +11,7 @@ class StoreHeroesRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,19 @@ class StoreHeroesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre_heroe' => 'required|unique:heroes',
+            'password' => 'required|max:10',
+            'año_inicio' => 'required',
+            'nivel' => 'required'
+        ];
+    }
+    public function messages(): array
+    {
+        return[
+            'nombre_heroe.required' => 'El campo es obligatorio',
+            'password' => 'El password es obligatorio',
+            'año_inicio' => 'El año es obligatorio',
+            'nivel' => 'El nivel es obligatorio'
         ];
     }
 }

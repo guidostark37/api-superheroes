@@ -17,7 +17,15 @@ class MisionEquipoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+
+            'equipo_id' => function(){
+
+                return \App\Models\Equipo::factory()->create()->id;
+            },
+            'mision_id' => function(){
+
+                return \App\Models\Mision::factory()->create()->id;
+            }
         ];
     }
 }

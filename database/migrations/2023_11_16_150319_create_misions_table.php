@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('misions', function (Blueprint $table) {
             $table->id();
             $table->String('mision');
+            $table->text('descripcion');
             $table->foreignIdFor(TipoMision::class)->constrained();
             $table->timestamps();
         });

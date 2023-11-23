@@ -14,8 +14,8 @@ class PoderHeroe extends Model
         return $this->belongsTo('heroes','id');
     }
 
-    public function superpoders()
+    public function superpoder()
     {
-        return $this->belongsTo('superpoders','id');
+        return $this->belongsToMany(Superpoder::class);
     }
 }

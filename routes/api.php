@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\HeroesController;
+use App\Http\Controllers\MisionController;
+use App\Http\Controllers\MisionEquipoController;
 use App\Http\Controllers\PlanetaController;
+use App\Http\Controllers\PoderHeroeController;
 use App\Http\Controllers\SuperpoderController;
+use App\Models\MisionEquipo;
 use App\Models\Planeta;
+use App\Models\PoderHeroe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,14 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
-Route::resource('heroes',HeroesController::class);
+Route::apiResource('heroes',HeroesController::class);
 
-Route::resource('planetas', PlanetaController::class);
+Route::apiResource('planetas', PlanetaController::class);
 
-Route::resource('superpoder',SuperpoderController::class);
+Route::apiResource('superpoder',SuperpoderController::class);
+
+Route::apiResource('poderheroes',PoderHeroeController::class);
+
+Route::apiResource('misiones',MisionController::class);
+
+Route::apiResource('misionesequipo',MisionEquipoController::class);
 

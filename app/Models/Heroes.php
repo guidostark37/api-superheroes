@@ -10,9 +10,9 @@ class Heroes extends Model
     use HasFactory;
 
 
-    protected  $hidden = [
-        'password'
-    ];
+    // protected  $hidden = [
+    //     'password'
+    // ];
 
     public function planeta()
     {

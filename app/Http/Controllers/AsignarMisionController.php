@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AsignarMision;
 use App\Http\Requests\StoreAsignarMisionRequest;
 use App\Http\Requests\UpdateAsignarMisionRequest;
+use App\Models\Mision;
 
 class AsignarMisionController extends Controller
 {
@@ -13,7 +14,7 @@ class AsignarMisionController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -21,7 +22,7 @@ class AsignarMisionController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,7 +36,7 @@ class AsignarMisionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AsignarMision $asignarMision)
+    public function show(Mision $mision)
     {
         //
     }
@@ -43,7 +44,7 @@ class AsignarMisionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AsignarMision $asignarMision)
+    public function edit(Mision $mision)
     {
         //
     }
@@ -51,16 +52,16 @@ class AsignarMisionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAsignarMisionRequest $request, AsignarMision $asignarMision)
+    public function update(UpdateAsignarMisionRequest $request, Mision $mision)
     {
-        //
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AsignarMision $asignarMision)
+    public function destroy(Mision $mision)
     {
-        //
+        
     }
 }

@@ -11,7 +11,7 @@ class UpdateEquipoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class UpdateEquipoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre_equipo' =>'required'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return[
+            'nombre_equipo.required' => 'El nombre del equipo es obligatorio'
         ];
     }
 }
