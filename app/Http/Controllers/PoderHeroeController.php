@@ -15,11 +15,9 @@ class PoderHeroeController extends Controller
     public function index()
     {
          $poderheroes = PoderHeroe::all();
-        // $poderheroes = PoderHeroe::join('heroes.id','=','heroes.nombre_heroe')
-        // ->select('*')
-        // ->get();
 
-       return response()->json( $poderheroes);
+         return $poderheroes;
+
     }
 
     /**
@@ -36,7 +34,7 @@ class PoderHeroeController extends Controller
     public function store(StorePoderHeroeRequest $request)
     {
         $poderheroes = PoderHeroe::create($request->all());
-        return response()->json($poderheroes);
+        return $poderheroes;
     }
 
     /**
@@ -45,7 +43,7 @@ class PoderHeroeController extends Controller
     public function show(PoderHeroe $poderHeroe)
     {
         $poderHeroe = PoderHeroe::findOrFail($poderHeroe);
-        return response()->json($poderHeroe);
+        return $poderHeroe;
     }
 
     /**
@@ -62,7 +60,7 @@ class PoderHeroeController extends Controller
     public function update(UpdatePoderHeroeRequest $request, PoderHeroe $poderHeroe)
     {
         $poderHeroe->update($request->all());
-        return response()->json($poderHeroe);
+        return $poderHeroe;
     }
 
     /**
@@ -72,7 +70,7 @@ class PoderHeroeController extends Controller
     {
         $poderHeroe = PoderHeroe::findOrFail($poderHeroe);
         $poderHeroe->delete();
-        return response()->json(null);
+        return $poderHeroe;
     }
 
 }

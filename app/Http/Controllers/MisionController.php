@@ -32,7 +32,7 @@ class MisionController extends Controller
     public function store(StoreMisionRequest $request)
     {
         $mision = Mision::create($request->all());
-        return response()->json($mision);
+        return $mision;
 
     }
 
@@ -42,7 +42,7 @@ class MisionController extends Controller
     public function show(Mision $mision)
     {
         $mision = Mision::findOrFail(  $mision);
-        return response()->json($mision);
+        return $mision;
     }
 
     /**
@@ -59,7 +59,7 @@ class MisionController extends Controller
     public function update(UpdateMisionRequest $request, Mision $mision)
     {
         $mision->update($request->all());
-        return response()->json($mision);
+        return $mision;
     }
 
     /**
@@ -69,6 +69,6 @@ class MisionController extends Controller
     {
         $mision = Mision::findOrFail(  $mision);
         $mision->delete();
-        return response()->json(null);
+        return $mision;
     }
 }

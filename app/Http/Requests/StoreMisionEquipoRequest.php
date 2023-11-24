@@ -22,7 +22,7 @@ class StoreMisionEquipoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'required'
         ];
     }
 }

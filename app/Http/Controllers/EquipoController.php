@@ -14,7 +14,7 @@ class EquipoController extends Controller
     public function index()
     {
         $equipo = Equipo::all();
-        return response()->json($equipo);
+        return $equipo;
 
     }
 
@@ -32,7 +32,7 @@ class EquipoController extends Controller
     public function store(StoreEquipoRequest $request)
     {
         $equipo = Equipo::create($request->all());
-        return response()->json($equipo);
+        return $equipo;
     }
 
     /**
@@ -42,7 +42,7 @@ class EquipoController extends Controller
     {
         $equipo = Equipo::findOrFail($equipo);
 
-        return response()->json($equipo);
+        return $equipo;
     }
 
     /**
@@ -59,7 +59,7 @@ class EquipoController extends Controller
     public function update(UpdateEquipoRequest $request, Equipo $equipo)
     {
         $equipo->update($request->all());
-        return response()->json($equipo);
+        return $equipo;
     }
 
     /**
@@ -70,7 +70,7 @@ class EquipoController extends Controller
 
         $equipo = Equipo::findOrFail($equipo);
         $equipo->delete();
-        return response()->json($equipo);
+        return $equipo;
 
     }
 }
